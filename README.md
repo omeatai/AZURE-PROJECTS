@@ -1,12 +1,9 @@
-# AZURE-LABS-IFEANYI by Ifeanyi Omeata
-AZURE-LABS-IFEANYI
+# AZURE-PROJECTS by Ifeanyi Omeata
 
-## AZURE COURSES
+## AZURE PROJECTS
 
-<details>
-  <summary>Azure for Begineers</summary>
-  
-- [ ] [COURSE](https://www.udemy.com/course/github-copilot/)
-
-</details>
-
+- [ ] [PROJECT 1](https://www.udemy.com/course/github-copilot/)
+- [ ] [PROJECT 2](https://www.udemy.com/course/github-copilot/)
+- [ ] [PROJECT 3](https://www.udemy.com/course/github-copilot/)
+- [ ] [PROJECT 4](https://www.udemy.com/course/github-copilot/)
+- [ ] [PROJECT 5](https://www.udemy.com/course/github-copilot/)
