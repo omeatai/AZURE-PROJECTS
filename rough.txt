@@ -1,0 +1,854 @@
+Now as we get ready to move on with the course.
+
+Before we begin, there's a couple of quick things I want to talk about.
+
+All right.
+
+Now, what I found is that a lot of people that come into one of these courses, they tend to think
+
+they've got everything they need jumping into it, when in reality they might be missing a few bits
+
+and pieces on concepts that maybe they've not picked up over the years or in previous courses they've
+
+taken.
+
+Uh, even my most expert, experienced students tend to be missing some bits and pieces.
+
+So what I'm about to do with you in these next few lectures is we're going to do a foundation lecture.
+
+We're going to talk about understanding things like on premise Active Directory, domain services.
+
+We're going to talk about what RAR and DMZ and virtualization is.
+
+We're going to talk about the Microsoft cloud services as a whole, including the ideas of Microsoft
+
+365 and Azure and IaaS, PaaS and SaaS and what all of that stuff is.
+
+And we're just going to make sure that we draw out a nice picture for you visually, so that you can
+
+help understand what these concepts are.
+
+Now, if you have taken some of my courses before, you may have already seen all of this, and you're
+
+more than welcome just to skip over this, if you've already seen these types of concepts before, you
+
+can skip through this, but this is going to definitely help you make sure you have a solid foundation.
+
+Uh, before we move on.
+
+All right.
+
+Now, the other thing I want to mention is coming up to you're going to see some videos that say, do
+
+not skip or don't skip.
+
+And it's very important that you don't skip any videos that have that tag at the beginning of the name
+
+of the video.
+
+All right.
+
+All right.
+
+Well, with that said, let's go ahead and jump right into the foundation.
+
+Now, if you're going to be working in any type of Microsoft administration services these days, there
+
+are some fundamental principles that are very important that you understand.
+
+So what I want to do is I want to get into some of the foundations of understanding things like Microsoft
+
+domains, understanding some of the networking technologies raz and VPNs and virtualization.
+
+And also we're going to talk about the cloud services and how all that fits into this.
+
+But it's important to kind of start from the beginning so you can understand where things have been,
+
+understand where things are going, and you have to consider the fact that, you know, we're the world
+
+is transitioning now more into a cloud oriented environment.
+
+But in the past, everything was managed on prem or on premise.
+
+And we got to talk about this transition and how things were and how things are now and where Microsoft
+
+is going.
+
+So to start with, you know, we go back, go back in time to the 1950s, 1960s.
+
+They had mainframes, these gigantic computers that would take up like entire rooms.
+
+They used vacuum tubes.
+
+And then as we moved into the 1970s, something miraculous happened.
+
+They created what was known as an IC, an integrated circuit, which allowed basically binary math to
+
+be processed through little chips.
+
+And this is where personal computing became popular.
+
+So in the 1980s, personal computers started coming out.
+
+I'm going to draw this little symbol here to represent a computer.
+
+And I tell you what, I'm going to create another little symbol here to kind of represent a bunch of
+
+computers.
+
+So in the 1980s, companies started buying PCs and personal computers, and they started showing up
+
+in people's offices.
+
+And eventually, you know, they were networking them together and all of that.
+
+And so this is where things really get started.
+
+Now, of course, in those days, one of the problems was we lived in what was called a peer to peer
+
+network.
+
+So what would happen is these computers were you could network these computers together with various
+
+technologies.
+
+But, um, there was no centralization, meaning each computer was equal.
+
+There was no computer that controls all the other computers.
+
+A network admin would have to if they wanted to make changes, they'd have to sit down at each and every
+
+computer to make those changes or get users to help them, which was always a nightmare.
+
+Um, and so that didn't, you know, it worked, but it didn't work very efficiently.
+
+All right.
+
+Now, as we moved into the 1990s, there was a company that kept that was gaining ground called Novell,
+
+Novell.
+
+And they had a product called NetWare, which was the idea of that was to use a server that would help
+
+manage machines and also allow people to share files easier, whereas in a peer to peer network back
+
+originally, these machines would have to share files with each other and people would have to know
+
+each other's passwords.
+
+It just didn't work very well.
+
+Well, eventually, with the creation of the file server concept, you had a more powerful machine that
+
+you could share files on and all that.
+
+And eventually Novell even came out with the idea of a server that could manage other machines.
+
+Now, this is kind of where Microsoft comes in.
+
+Microsoft created their product called NT, and they created this concept of a domain controller, which
+
+is a special type of server that can manage these other servers.
+
+Now fast forward, they came out with what was known as a domain.
+
+But fast forward to the year 2000.
+
+Microsoft releases their newest domain technology and they call it uh.
+
+Active Directory and Active Directory domains were represented by a triangle.
+
+All right.
+
+And a domain controller was a, a server essentially that had a database on it.
+
+And that database was the Active Directory database.
+
+So let's just kind of fix that here.
+
+This little cylinder looking thing I'm going to make here is going to represent my Active Directory
+
+database.
+
+So add.
+
+All right.
+
+Um, and this is what we still call to this day.
+
+We call it ads.
+
+Active directory domain services.
+
+And usually if you hear that firm, uh, Active Directory domain services, it means it's an on premise
+
+domain.
+
+So, anyway, um, you would always want to have more than one domain controller.
+
+You the reason you want to have more than one domain controller is because the same reason you have
+
+more than one of any type of server.
+
+Really.
+
+One reason being, um, to break up the disbursement of load, these machines will authenticate with
+
+these domain controllers.
+
+And the more machines you got, uh, you know, you don't want all of that just going to one domain
+
+controller, right?
+
+The other consideration is redundancy.
+
+If you only have one and that server goes down, well, you're in trouble right.
+
+So we want to have multiple.
+
+The other thing about domain controllers that are interesting is that they replicate.
+
+So for example let me make a I'm going to make a little smiley face guy here.
+
+And this little smiley face guy is going to represent my user.
+
+So we create a user account on a domain controller.
+
+Now the interesting thing about user accounts, or the interesting thing really about domain controllers
+
+is that they replicate.
+
+So everything you do on one, uh, will replicate over to the other.
+
+So if I create a user account on that first one, well, replication is going to occur between both
+
+of them.
+
+And so this little arrow thing I'm going to make here is going to represent replication.
+
+So domain controllers replicate.
+
+That means that this user could log on to any one of these thousand machine.
+
+And it's going to, you know, authenticate with the domain controller.
+
+Right.
+
+The authentication protocol that is used is the protocol known as Kerberos.
+
+All right.
+
+Kerberos is the authentication protocol.
+
+What is a protocol?
+
+It's like a language basically.
+
+Okay.
+
+Uh, now there was an older protocol that, that, uh, that it also supported called Ntlm.
+
+That was for legacy for older uh, prior to the year 2000 machines.
+
+Now the um, that protocol allowed us to have encrypted passwords and all that and authenticate securely
+
+and all that fun stuff.
+
+The other thing is, is Active Directory uses a language, um, known as the Directory Service language,
+
+and that language was called Ldap, Lightweight Directory Access Protocol.
+
+Now all that is again, this is all decades old at this point.
+
+Um, at the time when it came out, it was cutting edge.
+
+But it is a bit dated nowadays, but it still works and it's still pretty secure.
+
+Though there are some considerations on security that I'm not going to explain right now.
+
+Now, the other thing that's important about Active Directory is that all machines have to have a name,
+
+and the name must be, of course, associated with an IP address and, and all of that.
+
+And so there is a service that we use that we use it on the internet all the time called DNS Domain
+
+Name Service.
+
+Our, our uh, domain must have a name.
+
+Usually when you name your domain, you would name it after your company.
+
+And a lot of people even name their domains based on their web presence.
+
+So for example, my domain might be called exam lab practice.com.
+
+That's my company, my web presence.
+
+And um, I'm going to need to have a server in my domain that can associate the names and IP addresses
+
+together.
+
+So that server is called a DNS server, DNS Domain Name System server.
+
+And that server will also have to have a little database on it.
+
+And that database will be our DNS database okay.
+
+So we'll just draw another little cylinder.
+
+And what I'm going to do is I'm going to highlight this border with red.
+
+And then I'm going to color code the database red, which means that this database is DNS database is
+
+associated with that name.
+
+Now what happens is our machines clients domain controllers.
+
+We also might even have.
+
+Let's draw a file server over here.
+
+Pretty common that we have file servers in our environment.
+
+Okay.
+
+All of these machines would register with our DNS.
+
+All right.
+
+And this allows for the centralization of name resolution.
+
+Meaning they register their IP addresses into this database.
+
+And then now any time a machine needs to find another machine, it can query DNS.
+
+So for example, these machines all have to authenticate by your domain controllers.
+
+They can query DNS and say hey DNS, do you know what the address is of one of my domain controllers?
+
+So I can authenticate and DNS can reply back and say, yeah, here is the information.
+
+At that point the client can go and authenticate.
+
+So it works very efficiently.
+
+Now all of this together, this this idea of domain controllers, this triangle you see here, this
+
+provides centralization.
+
+So we moved away from peer to peer networking back in the day where, you know, every machine was kind
+
+of its own boss and there was no centralized way of managing things to.
+
+Now we are working in a centralized environment.
+
+These domain controllers help us centralize this DNS service.
+
+Help helps us centralize.
+
+So we now have some central control over things.
+
+One of the great things about our domain controllers, too, is we have these wonderful things called
+
+gpos group Policy objects.
+
+A group policy object is this object that you can create that has all these settings parameters, uh,
+
+you know, any type of attribute you want to configure or change on machines.
+
+You can do it through a GPO.
+
+So for example, if your boss walks up to you and says, hey, I want you to, um, force the firewalls
+
+to be turned on all these machines, I want to make sure that the antivirus is always up to date.
+
+Uh, I want you to disable some of the wallpaper feature.
+
+I don't want people you, uh, putting crazy wallpapers on their machine.
+
+Um, so, I mean, you could.
+
+The sky's the limit.
+
+There are literally thousands of things you can do inside of a GPO, but what happens is that GPO can
+
+instruct these machines to turn things on and turn things off.
+
+Gpos also replicate.
+
+So when you create a GPO on a domain controller, it replicates over to the other domain.
+
+So it doesn't matter which machines you know, authenticate with which domain controller.
+
+All right.
+
+So these gpos can be deployed out to these machines.
+
+And this is how you turn things on turn things off.
+
+You could even deploy software with that if you wanted to.
+
+So it was very very powerful.
+
+Um, a very, very powerful system for managing everything.
+
+All right.
+
+Uh, of course, let's let's throw the internet into the mix here.
+
+Let's say that this little cloud is going to represent the, uh, you know, the internet.
+
+And let's talk about kind of a little bit about how that sort of fits into the picture.
+
+Let me just clean it up here with the mighty stroke of my paintbrush, I will clean up the internet.
+
+All right.
+
+Um, all right.
+
+So then we have the internet, right?
+
+So maybe we've got an internet connection that's coming in here.
+
+All right.
+
+And of course, you don't want to just leave your internal network exposed.
+
+So your company would generally have a firewall, right.
+
+Um, and we would just put that firewall right here.
+
+And so now we have, um, you know, a secure way for traffic to flow out to the internet.
+
+And, uh, the only things that can come in would be things that we send out, and we could allow things
+
+through that firewall if we want to.
+
+Now, this is a traditional domain.
+
+This is the way we've done things for 20 years.
+
+All right.
+
+Um, and in this next little section, I want to talk about, uh, expansion on all of this and where,
+
+where things have gone with things like RAR and all that and VPN and virtualization.
+
+So that'll wrap this little section up and we'll move on to the next.
+
+
+And they want to talk about some concepts that are also sort of the foundation of how we've done things
+
+over the years.
+
+It's important to understand how we've done things over the years so we can understand how things are
+
+now.
+
+So looking back, we have an Active Directory domain aids.
+
+It's called Active Directory Domain Services, which uses the Ldap Lightweight Directory Access Protocol,
+
+which uses Kerberos authentication or for this older for the legacy.
+
+Back in the 90s, devices that used in TLM new technology LAN manager which is an all very new these
+
+days.
+
+But even Kerberos is pretty old can considering you know, we've been using it for for decades.
+
+And I think actually the protocol even came out back in the 1980s.
+
+So, you know, we got some data technologies, but the technologies have been updated, a lot of them
+
+over the years to be secure.
+
+So you can still feel comfortable using those.
+
+But let's talk about some different scenarios.
+
+Now.
+
+The first thing I want to look at is the scenario of what happens when we have a user who is not.
+
+At the office.
+
+So this person is working from home.
+
+Working from home is a lot more popular nowadays than it has been in the past.
+
+So it's very common.
+
+And this person needs the ability perhaps to, you know, be able to connect in and access, uh, services
+
+that are inside.
+
+Okay.
+
+Um, and we've got a file server, but, you know, ultimately we you probably are aware that, you
+
+know, in the past, um, it was always this mindset of do it yourself, host your own server.
+
+So, you know, your companies might have they might have a file server.
+
+But then they might also have a, you know, they might be they might have a SQL database server that
+
+that users need to access.
+
+Let's let's create that SQL.
+
+All right.
+
+Um, maybe, uh, Microsoft Exchange.
+
+That was email, right?
+
+Microsoft Exchange was, uh, you know, used for email and then maybe even like SharePoint was very
+
+popular by Microsoft on premise.
+
+So here you've got these, you know, these four servers providing a service to our devices.
+
+And um, you've got users working from home and everything else needing to get access to those.
+
+Let me just kind of move those a little bit over here.
+
+Make a little bit of room here, and I might shrink those down just a little bit as well.
+
+All right.
+
+So this user who is working from home needs to access these services.
+
+But the person is not, uh, you know, not around.
+
+Well, let me tell you what you shouldn't do.
+
+You shouldn't just open up all the ports on the firewall and allow this person in to get access to these,
+
+um, devices un securely.
+
+In fact, in the 90s, a lot of companies did that.
+
+The very first company I ever worked for, uh, back in the 90s, they didn't really have a firewall.
+
+So you literally could share out your you had a public address and, uh, you could connect to it from
+
+home.
+
+It was really scary.
+
+When I think about it, even in the 90s, that was scary.
+
+But nowadays it's incredibly scary.
+
+Why is it scary?
+
+Because you got these people out there that want to do things that they shouldn't do and, you know,
+
+get access to companies data and try to do damage and ransom and all of that ransomware and all that.
+
+And who are these people?
+
+Well, we we generally call them hackers, right.
+
+So let me draw a little hacker this, uh, this little this little, uh, box here is going to represent
+
+my hacker.
+
+All right.
+
+And.
+
+Let's make him.
+
+Let's make this hacker look like he's up to no good.
+
+All right.
+
+I'm just going to.
+
+I'm going to give him, like, a let's give him like a devil horns, some devil horns here and maybe,
+
+like, uh, you know, he's he's in a bad mood.
+
+We'll give him a frowny face, give him some fangs, and maybe the fangs are dripping blood everywhere.
+
+Okay.
+
+No, I'm just kidding.
+
+Sorry.
+
+Sometimes I get carried away, all right, but, uh, anyway, that's going to be my hacker, all right.
+
+Goofy looking little hacker person.
+
+All right.
+
+And, um, so we don't want this hacker, like, spying on my user.
+
+We don't want this hacker getting access to resources inside.
+
+So how do we get around that?
+
+Well, usually the way we would do that is you would use a VPN, a virtual private network.
+
+So the way you would do that is you could purchase what was called a VPN concentrator.
+
+And basically it's a device that, um, allows secure connections in.
+
+But in the Microsoft world, we actually had a type of server we could set up, uh, called a Raas server,
+
+or also known as an Raas server because it stood for Routing and Remote Access services.
+
+But, um, anyway, remote access services is the idea here.
+
+And with that, we have support for VPN.
+
+Now what does that do?
+
+This allows this thing called a VPN tunnel to be created, which means that you have this encrypted
+
+communications that goes through to that Raas server.
+
+And then from there, that Raas server allows you to access other resources securely.
+
+This hacker will not be able to see the the traffic that's flowing through because it's all encrypted.
+
+The only thing the hacker would be able to see is that it was going up to this firewall, and that would
+
+be it wouldn't be able to see what the traffic said.
+
+So this is how we would we would definitely help secure things.
+
+Now, the other thing that I want to talk to you about here is what happens when a company needs to
+
+have a service that is exposed to the internet.
+
+For example, let's say that your company is going to host their own web server.
+
+Okay.
+
+So you set up a web server.
+
+All right.
+
+Maybe this is going to be w-w-w dot exam lab practice.com or whatever.
+
+And people from the internet need to be able to get to it anonymously.
+
+Um, well, how are you going to do that?
+
+Where are you going to put that web server?
+
+Are you going to put it internally inside the domain like you see here?
+
+And the reason that's scary is because you'd have to open up port 443, port 80, which is http, http
+
+ports to allow traffic to get in.
+
+Which means not only could you know somebody out there on the internet anonymously get into this web
+
+server, but technically, so could a hacker.
+
+And if a hacker was ever to gain access over this website by hacking it, then something called pivoting
+
+could occur where a hacker could actually gain access to these other services that are on your network.
+
+And so that's where things are really scary.
+
+So you definitely wouldn't want to host it internally most of the time.
+
+Although there was a way to do something called a reverse proxy.
+
+I won't get into that right now, but we would probably want to put this outside, right?
+
+So we want to put it out here.
+
+Um, but there's something else that's a problem on that.
+
+If you put it outside that firewall, you don't have to worry about, you know, people getting, you
+
+know, allowing traffic to come in.
+
+But the only that the scary thing about that is the fact that this poor web server is now completely
+
+exposed to the internet.
+
+So with no protection.
+
+So the way around that usually is people would get another firewall.
+
+So you'd have two firewalls.
+
+This first firewall was would be called the internal connected firewall.
+
+And then this firewall here would be called the external connected firewall.
+
+Now this little network between that we would call that a DMZ demilitarized zone.
+
+Or now the more popular terms is perimeter network.
+
+Okay.
+
+So DMZ perimeter network are basically the same thing.
+
+All right.
+
+Um, and so now what you would do is you'd only open you would only open the ports like port 8443,
+
+53 for DNS.
+
+If you put DNS in there, uh, whatever ports there that you need.
+
+And now traffic would be able to get to this web server.
+
+Okay.
+
+Um, and so, uh, even if a hacker, you know, somehow hacks this web server, you're not going to
+
+allow traffic to pass through this firewall and get to these resources.
+
+The only traffic that you might allow would be VPN.
+
+Okay.
+
+Um, and there's a bunch of authentication and all that that has to happen to make that work.
+
+All right.
+
+So that's the idea of remote access and VPNs in a nutshell for you, as well as the concept of DMZ and
+
+the perimeter network idea.
+
+Now, the final thing I want to look at with you, um, in this video is the idea of virtualization.
+
+So I talked about how in the past, uh, it was always the mindset was we got to host everything ourselves.
+
+We got to have our own little data center.
+
+We got to have our, you know, we got to have our own servers, file server, SQL exchange, SharePoint,
+
+all that, and it's all got to be hosted by us.
+
+And that's the way things have always been done.
+
+All right.
+
+Um, now, uh, then what you'll find is, is as time went on, a company called VMware came out with
+
+a way of expanding on virtualization.
+
+Just so you know, virtualization is not a new terme.
+
+Virtualization has been around for a very long time.
+
+In fact, the Terme hypervisor is the essentially the software that lets us emulate hardware.
+
+And if you can emulate hardware, you can also store software on that emulated hardware.
+
+That's the idea of virtualization.
+
+Um, that Terme hypervisor has been around since the 1970s.
+
+The idea of even mainframes dividing up processing time and doing shared computing was a form of virtualization.
+
+So this is not a new concept, but VMware, they expanded on this idea and the I and the thing that
+
+they did that really pushed the envelope on all this was that, hey, you don't necessarily need four
+
+different servers.
+
+And here's the other thing.
+
+Here's the other crazy thing.
+
+If you wanted redundancy for those four servers, you'd really need eight servers, right?
+
+You could do clustering those together so you'd have eight servers to provide redundancy for those.
+
+But with with virtualization I can set up a hypervisor server.
+
+One server and an virtualize those other servers.
+
+Now, in the Microsoft world we call that Hyper-V.
+
+That is the the software that does this Hyper-V hyper hypervisor.
+
+Uh, Microsoft is not the one that came up with that.
+
+VMware is not the first ever come up with that.
+
+VMware was the biggest contributor to this concept, though, so I do have to give them credit where
+
+credit is due.
+
+All right.
+
+Now the other beautiful thing though about this is you get a really, really powerful machine.
+
+You virtualize your, uh, machines on those.
+
+You get these things called, um, checkpoints in Microsoft.
+
+They used to be called snapshots.
+
+And a lot of other companies still call them snapshots, where you can make changes without the worry
+
+of breaking anything, because you can revert back to before the change was made.
+
+The other thing that's wonderful about, um, using virtualization is if I want to have complete redundancy,
+
+I don't have to have eight servers.
+
+I could literally you know, purchase another server and have a copy of the virtual machines on that
+
+other server.
+
+Now I've only got two servers as opposed to having to have, uh, a total eight servers.
+
+Okay.
+
+So this is a very powerful feature capability that kind of started everything.
+
+Another thing that we got, and this is kind of where you start thinking about cloud computing, is
+
+with virtualization comes the firm elasticity, which basically means that each these machines can be
+
+given a certain amount of Ram processing power.
+
+But here's what's interesting about that.
+
+If one of the servers isn't using all of the available Ram that it's been given, it can share it with
+
+other servers.
+
+So, for example, this file server has been given more Ram than it needs, and then SQL needs that
+
+Ram.
+
+The file server can give up some of that Ram over to SQL, and when SQL is done using that extra memory,
+
+it can release it back to everybody.
+
+It's basically a pool type scenario where it gets released into a pool of Ram and pool of CPU, and
+
+they can grow and shrink as they need.
+
+And that's the a small way of sort of, uh, on premise way of looking at elasticity.
+
+Of course, when you get into cloud computing, you'll learn that that can expand across multiple machines,
+
+across the, you know, the board in these big data centers.
+
+But not to get into that just yet here, but that's the idea.
+
+Hopefully that now helps you with understanding that concept of what virtualization is.
+
+And with that is really where cloud computing started to come into play, which I'm not explaining in
+
+this video, but hopefully now you have a much better understanding of the concept of of the RA VPN
+
+as well the DMZ concepts and virtualization.
+
+And now we'll in this next section, we'll start getting into the concept of cloud services.

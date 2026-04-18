@@ -8,7 +8,7 @@
 - [ ] [PROJECT 4](https://www.udemy.com/course/github-copilot/)
 - [ ] [PROJECT 5](https://www.udemy.com/course/github-copilot/)
 
-## AZURE PROJECTS
+## AZURE NOTES
 
 - [ ] [NOTE 1](https://www.udemy.com/course/github-copilot/)
 - [ ] [NOTE 2](https://www.udemy.com/course/github-copilot/)

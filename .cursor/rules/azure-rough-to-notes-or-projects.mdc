@@ -1,0 +1,100 @@
+---
+description: Convert rough.txt Azure transcripts into researched notes or lab docs, then link from README
+globs: AZURE-PROJECTS/rough.txt
+alwaysApply: false
+---
+
+# Azure transcript intake (`rough.txt`)
+
+When the user wants to process **AZURE-PROJECTS/rough.txt** (or it is the active focus and they ask to convert / publish / file notes), do the following in order.
+
+## 1. Read the source
+
+- Read **AZURE-PROJECTS/rough.txt** in full. If it is empty, tell the user to paste transcript content and stop.
+
+## 2. Classify: notes vs lab project
+
+- **notes** (`AZURE-PROJECTS/notes/`): conceptual study material, exam topics, definitions, comparisons, admin center walkthroughs explained as learning, certification-focused summaries.
+- **projects** (`AZURE-PROJECTS/projects/`): hands-on labs, step-by-step portal/CLI exercises, “create a VM”, “deploy X”, lab objectives, exercises to repeat.
+
+If both appear, split into two files (one per folder) only when clearly mixed; otherwise pick the dominant purpose.
+
+## 3. Research before writing
+
+- Use **web search** and official Microsoft Learn / Azure docs to verify names, SKUs, portal paths, CLI/PowerShell syntax, and product behavior. Transcripts go stale quickly.
+- Update anything outdated in the draft so the final markdown reflects **current** Azure behavior. Note the study date in the doc (e.g. footer line: `Last reviewed: …`) when you had to change facts.
+
+## 4. File name and title
+
+- Derive the **filename** from the top topic: short **kebab-case** English, only letters, numbers, hyphens (e.g. `azure-resource-groups-and-tags.md`).
+- Start the file with a single `#` title that matches the topic (clear for a **high school** reader: plain language, define jargon on first use).
+
+## 4b. Introduction and table of contents (required at top of every new file)
+
+Immediately after the `#` title, before the main lesson content:
+
+1. **`## Introduction`** — A short section (a few sentences) that states **what this document covers**, **why it matters for Azure study or labs**, and **what the reader will be able to do or understand** when done. Use plain language.
+
+2. **`## Table of contents`** — A **well-organized** TOC that links to **every** substantive `##` and `###` heading in the rest of the file (match the final heading text and order). Use standard Markdown local links, for example:
+
+   ```markdown
+   ## Table of contents
+
+   - [Introduction](#introduction)
+   - [First major topic](#first-major-topic)
+     - [Subtopic A](#subtopic-a)
+     - [Subtopic B](#subtopic-b)
+   - [Second major topic](#second-major-topic)
+   ```
+
+   - Build anchor slugs the way GitHub renders them: lowercase, spaces → hyphens, strip punctuation where needed so links work.
+   - Nest `###` entries under their parent `##` with two-space indent for readability.
+   - Do not list “Table of contents” as an entry inside itself.
+
+Then continue with the body sections (first real content heading after the TOC).
+
+## 5. Markdown structure and style
+
+- Organize the body with logical `##` / `###` headings (these must match what you listed in the TOC).
+- **Main bullet points** must use task-list checkboxes with an **x** (completed style for the main ideas), one idea per line:
+
+  ```markdown
+  - [x] Main idea stated simply
+  ```
+
+- **Sub-bullets** under a main item: indent with **two spaces**, use a normal unordered list with a **hyphen** (reads as a dot in most renderers):
+
+  ```markdown
+  - [x] Main idea
+    - Extra detail or example
+    - Another sub-point
+  ```
+
+- Be **detailed** but **scannable**: short paragraphs, tables only when they clarify comparisons.
+- End with a **Key terms** or **Quick recap** section if it helps retention.
+
+## 6. Write the file
+
+- Create **AZURE-PROJECTS/notes/** or **AZURE-PROJECTS/projects/** if missing.
+- Save the new `.md` file there using the kebab-case name from step 4.
+
+## 7. Update **AZURE-PROJECTS/README.md**
+
+- Add **one** new list item in the matching section:
+  - Lab files → under the **PROJECT** list (first `## AZURE PROJECTS` block in the current README).
+  - Study notes → under the **NOTE** list (second block; same heading today—keep consistency unless the user has renamed it).
+- Match existing link style:
+
+  ```markdown
+  - [ ] [Human-readable title](./projects/your-file.md)
+  ```
+
+  or `./notes/your-file.md`. Use **relative** paths from `README.md`.
+
+## 8. Optional cleanup
+
+- After a successful run, you may **clear** `rough.txt` only if the user asked to “move” or “publish” content; if unsure, leave `rough.txt` as-is.
+
+## 9. Tone
+
+- Explain for someone studying for **Microsoft Azure certification** without assuming prior IT depth: analogies welcome, acronyms expanded once.
