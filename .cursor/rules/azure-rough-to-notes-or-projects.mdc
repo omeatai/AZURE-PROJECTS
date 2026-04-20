@@ -14,10 +14,12 @@ When the user wants to process **AZURE-PROJECTS/rough.txt** (or it is the active
 
 ## 2. Classify: notes vs lab project
 
-- **notes** (`AZURE-PROJECTS/notes/`): conceptual study material, exam topics, definitions, comparisons, admin center walkthroughs explained as learning, certification-focused summaries.
-- **projects** (`AZURE-PROJECTS/projects/`): hands-on labs, step-by-step portal/CLI exercises, “create a VM”, “deploy X”, lab objectives, exercises to repeat.
+- **notes** (`AZURE-PROJECTS/documents/`): conceptual study material, exam topics, definitions, comparisons, admin center walkthroughs explained as learning, certification-focused summaries.
+- **projects** (`AZURE-PROJECTS/documents/`): hands-on labs, step-by-step portal/CLI exercises, “create a VM”, “deploy X”, lab objectives, exercises to repeat.
 
-If both appear, split into two files (one per folder) only when clearly mixed; otherwise pick the dominant purpose.
+If both appear, split into two files (only when clearly mixed) using distinct kebab-case filenames in `documents/`; otherwise pick the dominant purpose and use one file.
+
+**Always** save new markdown outputs under **`AZURE-PROJECTS/documents/`** (not `notes/` or `projects/`).
 
 ## 3. Research before writing
 
@@ -75,7 +77,7 @@ Then continue with the body sections (first real content heading after the TOC).
 
 ## 6. Write the file
 
-- Create **AZURE-PROJECTS/notes/** or **AZURE-PROJECTS/projects/** if missing.
+- Create **AZURE-PROJECTS/documents/** if missing.
 - Save the new `.md` file there using the kebab-case name from step 4.
 
 ## 7. Update **AZURE-PROJECTS/README.md**
@@ -86,10 +88,10 @@ Then continue with the body sections (first real content heading after the TOC).
 - Match existing link style:
 
   ```markdown
-  - [ ] [Human-readable title](./projects/your-file.md)
+  - [ ] [Human-readable title](./documents/your-file.md)
   ```
 
-  or `./notes/your-file.md`. Use **relative** paths from `README.md`.
+  Use **`./documents/`** for both study notes and lab write-ups. Use **relative** paths from `README.md`.
 
 ## 8. Optional cleanup
 

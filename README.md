@@ -10,6 +10,7 @@
 
 ## AZURE NOTES
 
+- [ ] [Azure foundation: on-premises AD, networking, and cloud models](./documents/azure-foundation-on-premises-active-directory-networking-and-cloud-models.md)
 - [ ] [NOTE 1](https://www.udemy.com/course/github-copilot/)
 - [ ] [NOTE 2](https://www.udemy.com/course/github-copilot/)
 - [ ] [NOTE 3](https://www.udemy.com/course/github-copilot/)
