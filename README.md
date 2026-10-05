@@ -1,18 +1,7 @@
 # AZURE-PROJECTS by Ifeanyi Omeata
 
-## AZURE PROJECTS
+Hands-on AWS labs playlist: [AWS Cloud LABS](https://www.youtube.com/playlist?list=PL6rbQ5F5xbtUDapCqcNV0srF8Uu-8RtSt)
 
-- [ ] [PROJECT 1](https://www.udemy.com/course/github-copilot/)
-- [ ] [PROJECT 2](https://www.udemy.com/course/github-copilot/)
-- [ ] [PROJECT 3](https://www.udemy.com/course/github-copilot/)
-- [ ] [PROJECT 4](https://www.udemy.com/course/github-copilot/)
-- [ ] [PROJECT 5](https://www.udemy.com/course/github-copilot/)
+- [ ] [PROJECT 1 - CREATE AN IAM USER AND GROUP IN AWS](https://github.com/omeatai/AWS-PROJECTS/blob/main/labs/1.md)
 
-## AZURE NOTES
-
-- [ ] [Azure foundation: on-premises AD, networking, and cloud models](./documents/azure-foundation-on-premises-active-directory-networking-and-cloud-models.md)
-- [ ] [NOTE 1](https://www.udemy.com/course/github-copilot/)
-- [ ] [NOTE 2](https://www.udemy.com/course/github-copilot/)
-- [ ] [NOTE 3](https://www.udemy.com/course/github-copilot/)
-- [ ] [NOTE 4](https://www.udemy.com/course/github-copilot/)
-- [ ] [NOTE 5](https://www.udemy.com/course/github-copilot/)
+- [ ] [PROJECT 2 - CREATE IAM POLICIES](https://github.com/omeatai/AWS-PROJECTS/blob/main/labs/2.md)
